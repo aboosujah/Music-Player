@@ -16,6 +16,13 @@ class MusicPlayer:
         self.paused = False
 
         self.create_widgets()
+    
+    def create_widgets(self):
+        self.select_button = ttk.Button(self.root, text="Select Music", command=self.select_music,)
+        self.select_button.pack(pady=10)
+
+        self.song_label = ttk.Label(self.root, text="no music", font=("Helvetica", 12),justify='center',background= "#adb8c2")
+        self.song_label.pack(pady=10)
         
     def select_music(self):
         self.music_file = filedialog.askopenfilename(defaultextension=".mp3",
@@ -50,3 +57,4 @@ if __name__ == '__main__':
     style.configure("TButton", padding=0, font=("Helvetica", 12),Background="blue")
     music_player = MusicPlayer(root)
     root.mainloop()
+
