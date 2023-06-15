@@ -38,3 +38,15 @@ class MusicPlayer:
             else:
                 mixer.music.pause()
                 self.paused = True
+
+    def stop_music(self):
+        if self.music_file:
+            mixer.music.stop()
+
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    style = ttk.Style()
+    style.configure("TButton", padding=0, font=("Helvetica", 12),Background="blue")
+    music_player = MusicPlayer(root)
+    root.mainloop()
