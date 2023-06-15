@@ -29,3 +29,12 @@ class MusicPlayer:
             mixer.init()
             mixer.music.load(self.music_file)
             mixer.music.play()
+
+    def pause_music(self):
+        if self.music_file:
+            if self.paused:
+                mixer.music.unpause()
+                self.paused = False
+            else:
+                mixer.music.pause()
+                self.paused = True
