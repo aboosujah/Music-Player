@@ -29,6 +29,12 @@ class MusicPlayer:
 
         self.play_button = ttk.Button(self.controls_frame, text="Play", command=self.play_music)
         self.play_button.grid(row=0, column=0, padx=10)
+
+        self.pause_button = ttk.Button(self.controls_frame, text="Pause", command=self.pause_music)
+        self.pause_button.grid(row=0, column=1, padx=10)
+
+        self.stop_button = ttk.Button(self.controls_frame, text="Stop", command=self.stop_music,)
+        self.stop_button.grid(row=0, column=2, padx=10)
         
     def select_music(self):
         self.music_file = filedialog.askopenfilename(defaultextension=".mp3",
